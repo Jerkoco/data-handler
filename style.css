@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #cb2d3e, #ef473a);
+}
+
+header {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    height: 40px;
+    color: white;
+    z-index: 2;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+
+#addnew {
+    border-bottom: 4px solid white;
+    height: calc(100% - 4px);
+    width: 8%;
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+
+#go-root {
+    position: absolute;
+    display: inline-block;
+    font-size: 1.5em;
+    right: calc(20px - 0.3em);
+    top: calc(20px - 0.6em);
+}
+
+@media only screen and (max-width: 719px) {
+    #addnew {
+        width: 20%;
+    }
+
+}
+
+.add-text,
+.fa-plus-circle {
+    margin-top: 10px;
+}
+
+#folder-grid {
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+}
+
+#el-grid {
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.folder-el {
+    margin: 10px;
+    text-align: center;
+    font-size: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.el-el {
+    margin: 10px;
+    text-align: center;
+    font-size: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+    font-weight: bold;
+}
+
+.folder-el:hover,
+.folder-title:hover,
+#addnew:hover,
+.add-text:hover,
+.fa-plus-circle:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 719px) {
+    #folder-grid {
+        margin-top: 15%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .folder-el {
+        margin-left: 7px;
+        margin-right: 7px;
+        margin-bottom: 7px;
+        margin-top: 7px;
+        font-size: 0.7em;
+    }
+
+    #el-grid {
+        margin-top: 15%;
+        grid-template-columns: 1fr;
+    }
+
+    .el-el {
+        margin: 20px 5%;
+    }
+}

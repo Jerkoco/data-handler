@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <title>data-handler</title>
+</head>
+
+<body>
+    
+    <div id="app">
+
+    <header>
+        <div id="addnew" v-on:click="addnew()">
+            <span class="add-text">Add </span><i class="fas fa-plus-circle"></i>
+        </div>
+        
+        <div id="go-root" v-on:click="goRoot()">
+            <i class="fas fa-th"></i>
+        </div>
+            
+    </header>
+
+        <div id="folder-grid" v-if="currentFolder == 'root' ">
+            <div class="folder-el" v-for="(folder, index) in folders" v-on:click="changeCurrentFolder(index)">
+                <h2 class="folder-title">{{ folder.title }}</h2>
+            </div>
+        </div>
+        <div id="el-grid" v-if="currentFolder != 'root' ">
+            <div class="el-el" v-for="el in currentFolder.childs">
+                <h3>{{el.title}}</h3>
+                <p>{{el.content}}</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="app.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</body>
+
+</html>
