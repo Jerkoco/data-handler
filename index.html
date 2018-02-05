@@ -33,7 +33,19 @@
                 <h3>{{el.title}}</h3>
                 <p>{{el.content}}</p>
             </div>
+            
         </div>
+        
+        <div v-if="isPopupOpen == true" id="popup-background">
+            
+            <div id="popup-add">
+                <input  type="text" id="add-title" placeholder="Title"/>
+                <textarea id="add-content" v-if="currentFolder != 'root' "></textarea>
+                <span id="add-button">Valider</span>
+            </div>
+            
+        </div>
+        
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>

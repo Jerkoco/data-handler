@@ -1,6 +1,6 @@
 var datab = [
     {
-        title: "cryptos",
+        title: "machin",
         childs: [
             {
                 title: "lorem",
@@ -15,7 +15,7 @@ var datab = [
             }
         ]
 }, {
-        title: "comptes",
+        title: "bidule",
         childs: [
             {
                 title: "lorem",
@@ -184,7 +184,8 @@ var app = new Vue({
     el: "#app",
     data: {
         folders: datab,
-        currentFolder: "root"
+        currentFolder: "root",
+        isPopupOpen: false
     },
     methods: {
         changeCurrentFolder: function(index) {
@@ -192,8 +193,10 @@ var app = new Vue({
         },
         goRoot: function() {
             this.$data.currentFolder = "root";
+            this.$data.isPopupOpen = false;
         },
         addnew: function() {
+            this.$data.isPopupOpen = true;
             if (this.$data.currentFolder == 'root') {
                 // creates new folder
             } else {
